@@ -10,7 +10,9 @@ function include_bloc ($url, $date)
             $$a = $date[$i]["value_variable"];
         }
     }
-    return require_once $url;
+    ob_start();
+    $content = require_once $url;
+    return ob_get_clean();
 };
 
 function next_time()

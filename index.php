@@ -1,10 +1,10 @@
 <?php
-$is_auth = (bool) rand(0, 1);
+//$is_auth = (bool) rand(0, 1);
 require_once "functions.php";
 
 $user_name = 'Константин';
 $user_avatar = 'img/user.jpg';
-$page_content = "include " . "templates\index.php";
+//$page_content = "include " . "templates\index.php";
 
 $product_category = array("Boards and skis", "Binding", "Boots", "Clothes", "Instruments", "Different");
 $product = 
@@ -27,7 +27,8 @@ function format_price($price)
     return $price . " ";
 }
 
-print include_bloc("templates/layout.php", [["name_variable" => "content", "value_variable" => print include_bloc ("templates/index.php", [["name_variable" => "product_category", "value_variable" => $product_category], ["name_variable" => "product", "value_variable" => $product]])]]);
+$cont = include_bloc ("templates/index.php", [["name_variable" => "product_category", "value_variable" => $product_category], ["name_variable" => "product", "value_variable" => $product], ["name_variable" => "title", "value_variable" => "Home page"], ]);
+print include_bloc("templates/layout.php", [["name_variable" => "content", "value_variable" => $cont], ["name_variable" => "title", "value_variable" => "Home page"]]);
 
 
 
