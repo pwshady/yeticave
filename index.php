@@ -27,8 +27,8 @@ function format_price($price)
     return $price . " ";
 }
 
-$cont = include_bloc ("templates/index.php", [["name_variable" => "product_category", "value_variable" => $product_category], ["name_variable" => "product", "value_variable" => $product], ["name_variable" => "title", "value_variable" => "Home page"], ]);
-print include_bloc("templates/layout.php", [["name_variable" => "content", "value_variable" => $cont], ["name_variable" => "title", "value_variable" => "Home page"]]);
+$cont = include_bloc ("templates/index.php", ["product_category" => $product_category, "product" => $product]);
+print include_bloc("templates/layout.php", ["content" => $cont, "title" => "Home page"]);
 
 
 

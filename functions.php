@@ -4,12 +4,11 @@ function include_bloc ($url, $date)
 {
     if (isset($date))
     {
-        for ($i = 0; $i < count($date); $i++)
+        foreach($date as $key => $value)
         {
-            $a = $date[$i]["name_variable"];
-            $$a = $date[$i]["value_variable"];
-        }
-    }
+            $$key = $value;
+        };
+    };
     ob_start();
     $content = require_once $url;
     return ob_get_clean();
