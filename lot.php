@@ -2,7 +2,7 @@
 
 require "lots.php";
 require_once "functions.php";
-if (isset($product_id)): ?>
+if (isset($page_mode)): ?>
 <main>
   <nav class="nav">
     <ul class="nav__list container">
@@ -14,7 +14,7 @@ if (isset($product_id)): ?>
     </ul>
   </nav>
   <section class="lot-item container">
-    <h2><?=$product[$product_id-1]["product_name"]?></h2>
+    <h2><?=$product[$product_id]["product_name"]?></h2>
     <div class="lot-item__content">
       <div class="lot-item__left">
         <div class="lot-item__image">
@@ -130,7 +130,7 @@ if (!isset($page_mode))
   print include_bloc("templates/layout.php", ["content" => $cont, "title" => "Lot"]);
   
 };
-unset($page_mode);
+//unset($page_mode);
 //print $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
 //print include_bloc("templates/layout.php", ["content" => $cont, "title" => "Lot"]);

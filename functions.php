@@ -31,4 +31,14 @@ function format_price($price)
     return $price . " ";
 };
 
+function form_validate()
+{
+    $errors_form = [];
+    if (count($_POST) < 2)
+        {
+            array_push($errors_form, "no_form");
+        }
+    return $errors_form;  
+};
+
 ?>
